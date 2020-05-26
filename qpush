@@ -20,7 +20,7 @@ echo "Staging the following modifications:"
 git status
 
 echo ""
-read  -p "Add, commit, and push to remote $remote, branch $currentBranch ? [y/n]    " doCommit
+read  -p "Stage the above modifications, commit, and push to remote $remote, branch $currentBranch ? [y/n]    " doCommit
 
 if [ "$doCommit" == "y" ]
 then

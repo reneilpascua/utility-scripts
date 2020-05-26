@@ -11,7 +11,7 @@ msg=${1:-quick commit}
 echo "Staging the following modifications:"
 git status
 
-read  -p "Commit? [y/n]    " doCommit
+read  -p "Stage the above modifications and commit? [y/n]    " doCommit
 
 if [ "$doCommit" == "y" ]
 then
