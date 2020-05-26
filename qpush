@@ -1,0 +1,28 @@
+#!/bin/bash
+
+#usage:
+#	$ qpush ["my commit message"] [remote] [branch]
+
+# defaults:
+#	commit message: quick commit
+#	remote: origin
+#	branch: current branch
+
+
+#get current branch
+currentBranch=$(git branch | grep ^'*' | cut -d ' ' -f 2)
+
+msg=${1:-quick commit}
+remote=${2:-origin}
+
+echo "Staging the following modifications:"
+git status
+
+read  -p "Add, commit, and push to remote $remote, branch $currentBranch ? [y/n]    " doCommit
+
+if [ "$doCommit" == "y" ]
+then
+	git add .
+	git commit -m "[q] $msg"
+	git push -u $remote $branch
+fi

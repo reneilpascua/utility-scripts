@@ -1,0 +1,21 @@
+#!/bin/bash
+
+#usage:
+#	$ qcommit "my commit message"
+
+# defaults:
+#	commit message: quick commit
+
+msg=${1:-quick commit}
+
+echo "Staging the following modifications:"
+git status
+
+read  -p "Commit? [y/n]    " doCommit
+
+if [ "$doCommit" == "y" ]
+then
+	git add .
+	git commit -m "[q] $msg"
+fi
+
