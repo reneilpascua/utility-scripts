@@ -15,9 +15,11 @@ currentBranch=$(git branch | grep ^'*' | cut -d ' ' -f 2)
 msg=${1:-quick commit}
 remote=${2:-origin}
 
+echo ""
 echo "Staging the following modifications:"
 git status
 
+echo ""
 read  -p "Add, commit, and push to remote $remote, branch $currentBranch ? [y/n]    " doCommit
 
 if [ "$doCommit" == "y" ]
