@@ -7,6 +7,7 @@
 #	commit message: quick commit
 #	remote: origin
 #	branch: current branch
+#		- if you do not have a current branch (ex. you've just added the remote), will fail to push
 
 
 #get current branch
