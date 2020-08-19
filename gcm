@@ -1,12 +1,12 @@
 #!/bin/bash
 
 #usage:
-#	$ qcommit "my commit message"
+#	$ gcm "my commit message"
 
 # defaults:
-#	commit message: quick commit
+#	commit message: did something
 
-msg=${1:-quick commit}
+msg=${1:-did something}
 
 echo "Staging the following modifications:"
 git status
@@ -16,6 +16,6 @@ read  -p "Stage the above modifications and commit? [y/n]    " doCommit
 if [ "$doCommit" == "y" ]
 then
 	git add .
-	git commit -m "[q] $msg"
+	git commit -m "$msg"
 fi
 

@@ -1,10 +1,10 @@
 #!/bin/bash
 
 #usage:
-#	$ qpush ["my commit message"] [remote] [branch]
+#	$ gpo ["my commit message"] [remote] [branch]
 
 # defaults:
-#	commit message: quick commit
+#	commit message: did something
 #	remote: origin
 #	branch: current branch
 #		- if you do not have a current branch (ex. you've just added the remote), will fail to push
@@ -13,7 +13,7 @@
 #get current branch
 currentBranch=$(git branch | grep ^'*' | cut -d ' ' -f 2)
 
-msg=${1:-quick commit}
+msg=${1:-did something}
 remote=${2:-origin}
 
 echo ""
@@ -26,6 +26,6 @@ read  -p "Stage the above modifications, commit, and push to remote $remote, bra
 if [ "$doCommit" == "y" ]
 then
 	git add .
-	git commit -m "[q] $msg"
-	git push $remote $branch
+	git commit -m "$msg"
+	git push -u $remote $branch
 fi
