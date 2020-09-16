@@ -1,0 +1,3 @@
+#!/bin/bash
+echo page source of $1 to stdout
+python scrapesite.py $1
