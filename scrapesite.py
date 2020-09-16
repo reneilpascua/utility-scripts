@@ -11,7 +11,6 @@ options.headless = True
 # options.add_argument("--window-size=1920,1200")
 
 driver = webdriver.Chrome(options=options, executable_path=DRIVER_PATH)
-print('hello world')
 driver.get(argv[1])
 print(driver.page_source)
 driver.quit()
